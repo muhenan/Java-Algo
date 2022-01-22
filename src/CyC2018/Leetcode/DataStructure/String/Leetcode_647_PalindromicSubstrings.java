@@ -26,4 +26,26 @@ public class Leetcode_647_PalindromicSubstrings {
         return count;
     }
 
+    // 解法2
+
+    private int count2 = 0;
+
+    private void extendSubstrings(String s, int start, int end) {
+        int length = s.length();
+        while (start >= 0 && end < length && s.charAt(start) == s.charAt(end)) {
+            start--;
+            end++;
+            count2++;
+        }
+    }
+
+    public int countSubstrings2(String s) {
+        int length = s.length();
+        for (int i = 0; i < length; i++) {
+            extendSubstrings(s, i, i); // 奇数长度
+            extendSubstrings(s, i, i + 1); // 偶数长度
+        }
+        return count2;
+    }
+
 }
