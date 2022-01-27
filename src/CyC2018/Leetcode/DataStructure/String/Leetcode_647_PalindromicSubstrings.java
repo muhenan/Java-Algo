@@ -26,7 +26,7 @@ public class Leetcode_647_PalindromicSubstrings {
         return count;
     }
 
-    // 解法2
+    // 解法2 中心拓展
 
     private int count2 = 0;
 
@@ -47,5 +47,7 @@ public class Leetcode_647_PalindromicSubstrings {
         }
         return count2;
     }
+
+    // 解法3 manacher
 
 }
