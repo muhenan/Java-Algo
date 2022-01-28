@@ -53,7 +53,7 @@ public class Manacher {
         System.out.println(maxLength);
         System.out.println(countOfPalin);
         System.out.println(PositionOfLongestPalind);
-        // position 偶，指着字母
+
         int maxRadius = (radius[PositionOfLongestPalind] - 1) / 2;
         int realCenter = (PositionOfLongestPalind - 1) / 2;
         int beginIndex = realCenter - maxRadius;
