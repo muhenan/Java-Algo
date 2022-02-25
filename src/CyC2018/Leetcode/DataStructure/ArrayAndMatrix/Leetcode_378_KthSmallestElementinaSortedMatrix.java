@@ -39,6 +39,8 @@ import java.util.PriorityQueue;
  *      不用在意是找到时候是 (left, mid] 还是 [left, mid]
  *      因为这里的找可以认为是整个从矩阵里找的，这点非常舒服！
  *
+ *      时间复杂度 O(n)
+ *
  *
  * **/
 
@@ -104,12 +106,36 @@ public class Leetcode_378_KthSmallestElementinaSortedMatrix {
         int num = 0;
         while (row >= 0 && col < n) {
             if (matrix[row][col] <= mid) {
-                num += row + 1;
+                num += row + 1; // 这里是竖着算的，直接把这一列的，上面的都算进来
                 col++;
             } else {
                 row--;
             }
         }
         return num >= k;
+    }
+
+    // 方法 3 简化一下代码，一个函数解决问题
+    public int kthSmallest31(int[][] matrix, int k) {
+        int n = matrix.length;
+        int left = matrix[0][0];
+        int right = matrix[n - 1][n - 1];
+        while (left < right) {
+            int mid = left + ((right - left) >> 1);
+            int row = n - 1;
+            int col = 0;
+            int num = 0;
+            while (row >= 0 && col < n) {
+                if (matrix[row][col] <= mid) {
+                    num += row + 1; // 这里是竖着算的，直接把这一列的，上面的都算进来
+                    col++;
+                } else {
+                    row--;
+                }
+            }
+            if (num >= k) right = mid;
+            else left = mid + 1;
+        }
+        return left;
     }
 }
