@@ -73,4 +73,22 @@ public class BinarySearch {
     // 如果找到的话，正常是 l 和 h 一样
     // 重点就在于，当找到相同的时候，high 赋过去，这样就能保证一直是在往左推进
 
+
+
+    //变种
+    //如果能找到的话，直接找到，找不到的话，找比这个数小的最大的一个
+    public int binarySearchLowMax(int[] nums, int key) {
+        int low = 0;
+        int high = nums.length;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (nums[mid] == key) return nums[mid];
+            else if (nums[mid] < key) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return high;
+    }
 }

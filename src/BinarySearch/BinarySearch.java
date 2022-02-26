@@ -12,52 +12,52 @@ public class BinarySearch {
     //而且这里使用的是循环，不是递归哦
     //循环主要是循环的 low 和 high
     //只要是符合 low <= high 就继续操作
-    public int binarySearch(int[] nums, int key) {
-        int l = 0, h = nums.length - 1;
-        while (l <= h) {
-            int m = l + (h - l) / 2;
-            if (nums[m] == key) {
-                return m;
-            } else if (nums[m] > key) {
-                h = m - 1;
-            } else {
-                l = m + 1;
-            }
-        }
-        return -1;
-    }
+//    public int binarySearch(int[] nums, int key) {
+//        int l = 0, h = nums.length - 1;
+//        while (l <= h) {
+//            int m = l + (h - l) / 2;
+//            if (nums[m] == key) {
+//                return m;
+//            } else if (nums[m] > key) {
+//                h = m - 1;
+//            } else {
+//                l = m + 1;
+//            }
+//        }
+//        return -1;
+//    }
 
     //用的是带进来的左右
-    public int binarySearch2(int[] nums, int key, int left, int right) {
-        int l = left, h = right;
-        while (l <= h) {
-            int m = l + (h - l) / 2;
-            if (nums[m] == key) {
-                return m;
-            } else if (nums[m] > key) {
-                h = m - 1;
-            } else {
-                l = m + 1;
-            }
-        }
-        return -1;
-    }
+//    public int binarySearch2(int[] nums, int key, int left, int right) {
+//        int l = left, h = right;
+//        while (l <= h) {
+//            int m = l + (h - l) / 2;
+//            if (nums[m] == key) {
+//                return m;
+//            } else if (nums[m] > key) {
+//                h = m - 1;
+//            } else {
+//                l = m + 1;
+//            }
+//        }
+//        return -1;
+//    }
 
     // 变种
     // 二分查找可以有很多变种，实现变种要注意边界值的判断。
     // 例如在一个有重复元素的数组中查找 key 的最左位置的实现如下：
-    public int binarySearchLeftest(int[] nums, int key) {
-        int l = 0, h = nums.length;
-        while (l < h) {
-            int m = l + (h - l) / 2;
-            if (nums[m] >= key) {
-                h = m;
-            } else {
-                l = m + 1;
-            }
-        }
-        return l;
-    }
+//    public int binarySearchLeftest(int[] nums, int key) {
+//        int l = 0, h = nums.length;
+//        while (l < h) {
+//            int m = l + (h - l) / 2;
+//            if (nums[m] >= key) {
+//                h = m;
+//            } else {
+//                l = m + 1;
+//            }
+//        }
+//        return l;
+//    }
     // 如果找到的话，正常是 l 和 h 一样
     // 重点就在于，当找到相同的时候，high 赋过去，这样就能保证一直是在往左推进
 
