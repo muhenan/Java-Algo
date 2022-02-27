@@ -27,10 +27,8 @@ public class Leetcode_69_Sqrtx { // 这里的边界真的不好控制，这是�
         int low = 1;
         int high = x;
         int mid = 0;
-        int squareOfMid = 0;
         while (low < high) {
             mid = low + (high - low) / 2;
-            squareOfMid = mid * mid;
             if (x / mid == x) {
                 return mid;
             } else if (x / mid < x) {
