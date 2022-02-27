@@ -1,4 +1,4 @@
-package CyC2018.Leetcode.DataStructure.BinarySearch;
+package CyC2018.Leetcode.Algo.BinarySearch;
 
 /**
  * 最后返回的那个，肯定是第奇数，因为前面肯定有 k 个 2 连组了

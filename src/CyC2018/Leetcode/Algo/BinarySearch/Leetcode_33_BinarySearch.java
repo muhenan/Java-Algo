@@ -1,4 +1,4 @@
-package CyC2018.Leetcode.DataStructure.BinarySearch;
+package CyC2018.Leetcode.Algo.BinarySearch;
 
 // 非常经典一个题目
 

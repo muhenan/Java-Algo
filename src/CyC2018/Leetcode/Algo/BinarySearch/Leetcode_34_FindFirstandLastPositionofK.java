@@ -1,4 +1,4 @@
-package CyC2018.Leetcode.DataStructure.BinarySearch;
+package CyC2018.Leetcode.Algo.BinarySearch;
 
 /**
  * 这里说一点，计算机的 int 的除法，其实是默认让你偏左放的

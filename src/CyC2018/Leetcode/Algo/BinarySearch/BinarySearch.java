@@ -1,4 +1,4 @@
-package CyC2018.Leetcode.DataStructure.BinarySearch;
+package CyC2018.Leetcode.Algo.BinarySearch;
 
 
 // 只要是排序的数组，那么一般就肯定考虑二分查找

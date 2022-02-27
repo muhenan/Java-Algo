@@ -1,4 +1,4 @@
-package CyC2018.Leetcode.DataStructure.BinarySearch;
+package CyC2018.Leetcode.Algo.BinarySearch;
 
 /**
  * char 可以像 int 一样，直接比较

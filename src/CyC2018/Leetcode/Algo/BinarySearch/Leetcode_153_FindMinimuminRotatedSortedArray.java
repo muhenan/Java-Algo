@@ -1,4 +1,4 @@
-package CyC2018.Leetcode.DataStructure.BinarySearch;
+package CyC2018.Leetcode.Algo.BinarySearch;
 
 // 简单的二分查找，最后 low 和 high 走到一个低的小数组里 返回 nums[low]
 
