@@ -15,7 +15,7 @@ package CyC2018.Leetcode.Algo.TwoPointers;
 public class Leetcode_633_SumofSquareNumbers {
     public boolean judgeSquareSum(int c) {
         long left = 0;
-        long right = (int) Math.sqrt(c);
+        long right = (int) Math.sqrt(c);  // 初始化的时候直接剪枝一下，降低时间复杂度
         while (left <= right) {
             long sum = left * left + right * right;
             if (sum == c) return true;
