@@ -2,6 +2,8 @@ package CyC2018.Leetcode.DataStructure.ArrayAndMatrix;
 
 //题目要求：你设计的解决方案必须 不修改 数组 nums 且只用常量级 O(1) 的额外空间！
 
+import java.util.HashSet;
+
 /**
  * 如果没有任何要求的话，我想到的最简单的方法是计数，时间空间复杂度都是线性，不符合常量的空间复杂度
  *
@@ -28,6 +30,16 @@ package CyC2018.Leetcode.DataStructure.ArrayAndMatrix;
  *                      这时我们知道 快指针再走 a 就到结点了，怎么量这个 a 呢，从起点再走一个慢指针，这时快慢的都是一格一格的走，都走 a 的时候刚好在结点相遇
  *           6ms
  *
+ *  方法 4：直接计数
+ *          可以用数组计数，也可以用哈希表，直接用高端数据结构解决问题！
+ *
+ *          直接数组计数
+ *          3ms
+ *
+ *          HashSet 计数
+ *          19ms
+ *          不行，计数的效率和数组没法比
+ *
  *
  * **/
 
@@ -50,7 +62,7 @@ public class Leetcode_287_FindtheDuplicateNumber {
         return 0;
     }
 
-    public int findDuplicate2(int[] nums) {
+    public int findDuplicate3(int[] nums) {
         int slow = nums[0];
         int fast = nums[nums[0]];
         while (slow != fast) {
@@ -63,6 +75,45 @@ public class Leetcode_287_FindtheDuplicateNumber {
             fast = nums[fast];
         }
         return slow;
+    }
+
+    //二分查找方法
+    //我们可以查找小于等于 i 的数字有多少个
+    //如果刚好等于i，说明答案比 i 大
+    //如果大于i，说明答案是小于i的
+    public int findDuplicate2(int[] nums) {
+        int l = 1, h = nums.length - 1;
+        while (l <= h) {
+            int mid = l + (h - l) / 2;
+            int cnt = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] <= mid) cnt++;
+            }
+            if (cnt > mid) h = mid - 1;
+            else l = mid + 1;
+        }
+        return l;
+    }
+
+    // 计数
+    public int findDuplicate4(int[] nums) { // 直接数组计数
+        int length = nums.length;
+        int[] counts = new int[100002];
+        for (int i = 0; i < length; i++) {
+            if (counts[nums[i]] != 1) counts[nums[i]] = 1;
+            else return nums[i];
+        }
+        return -1;
+    }
+
+    public int findDuplicate41(int[] nums) { // 用 HashSet 计数
+        int length = nums.length;
+        HashSet<Integer> mySet = new HashSet<>();
+        for (int i = 0; i < length; i++) {
+            if (!mySet.contains(nums[i])) mySet.add(nums[i]);
+            else return nums[i];
+        }
+        return -1;
     }
 
 }

@@ -4,53 +4,6 @@ import java.util.*;
 
 public class Array {
 
-    // 283
-    // 把数组中的 0 移到末尾
-    // given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
-    // 最简单的不占用内存空间的做法
-    // 直接一遍遍历，不是0的直接向前赋值，这是数组这边的一个常用思想
-
-    // 这样也可以保证了数组的顺序
-
-    public void moveZeroes(int[] nums) {
-        int idx = 0;
-        for (int num : nums) {
-            if (num != 0) {
-                nums[idx++] = num;
-            }
-        }
-        while (idx < nums.length) {
-            nums[idx++] = 0;
-        }
-    }
-
-
-    //给定一个包含n + 1 个整数的数组nums ，其数字都在 1 到 n之间（包括 1 和 n），可知至少存在一个重复的整数。
-    //
-    //假设 nums 只有 一个重复的整数 ，找出 这个重复的数 。
-    //
-
-    //最简单的这里有 O(N) 的 哈希的方法
-
-
-    //更简单的是二分查找的方法
-    //我们可以查找小于等于 i 的数字有多少个
-        //如果刚好等于i，说明答案比 i 大
-        //如果大于i，说明答案是小于i的
-    public int findDuplicate(int[] nums) {
-        int l = 1, h = nums.length - 1;
-        while (l <= h) {
-            int mid = l + (h - l) / 2;
-            int cnt = 0;
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] <= mid) cnt++;
-            }
-            if (cnt > mid) h = mid - 1;
-            else l = mid + 1;
-        }
-        return l;
-    }
-
 
     //56. 合并区间
     //首先是按照区间的起点来排序的
