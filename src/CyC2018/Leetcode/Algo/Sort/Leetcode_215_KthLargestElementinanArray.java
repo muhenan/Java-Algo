@@ -25,6 +25,7 @@ public class Leetcode_215_KthLargestElementinanArray {
         while (count-- > 0) pq.poll();
         return pq.peek();
     }
+    /**涉及到堆的，pq的，都去维护堆的容量！！！可以有效的降低时间复杂度**/
 
     public int findKthLargest11(int[] nums, int k) {
         PriorityQueue<Integer> pq = new PriorityQueue<>(); // 小顶堆
