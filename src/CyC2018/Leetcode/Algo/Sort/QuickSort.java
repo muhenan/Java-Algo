@@ -30,12 +30,13 @@ public class QuickSort {
      * **/
     public static int partition(int[] arr,int low,int high){
         int pivot = arr[low];
+        int OldLow = low;
         while (low < high){
             while (arr[high] >= pivot && low < high) high--;
-            while (arr[low] < pivot && low < high) low++;
+            while (arr[low] <= pivot && low < high) low++;
             if(low < high) swap(arr, low, high);
         }
-        arr[0] = arr[low];
+        arr[OldLow] = arr[low];
         arr[low] = pivot;
         return high; // 最后 low 和 high 是相等的
     }
