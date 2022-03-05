@@ -1,22 +1,22 @@
-package Sort;
+package CyC2018.Leetcode.Algo.Sort;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class frequencySort_String {
-
-    /*
-    * 这个题主要就是了解一下 Java 中不熟悉的 字符串的数据结构
-    * Character
-    * char
-    * toCharArray
-    * StringBuilder
-    *   append
-    * */
+public class Leetcode_451_SortCharactersByFrequency {
+    /**
+     * 方法还是桶排序，和 347 的桶排序一样，时间复杂度 O(n)
+     * 这道题的话，学一些字符串的操作：toCharArray StringBuilder append
+     * **/
     public String frequencySort(String s) {
+        // 计数
         Map<Character, Integer> frequencyForNum = new HashMap<>();
         for (char c : s.toCharArray())
             frequencyForNum.put(c, frequencyForNum.getOrDefault(c, 0) + 1);
 
+        //  frequency to element
         List<Character>[] frequencyBucket = new ArrayList[s.length() + 1];
         for (char c : frequencyForNum.keySet()) {
             int f = frequencyForNum.get(c);
@@ -25,7 +25,8 @@ public class frequencySort_String {
             }
             frequencyBucket[f].add(c);
         }
-        // 字符串
+
+        // 组装成结果字符串
         StringBuilder str = new StringBuilder();
         for (int i = frequencyBucket.length - 1; i >= 0; i--) {
             if (frequencyBucket[i] == null) {
@@ -37,6 +38,7 @@ public class frequencySort_String {
                 }
             }
         }
+
         return str.toString();
     }
 }
