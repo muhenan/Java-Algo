@@ -140,6 +140,7 @@ public class Leetcdoe_112_PathSum {
      * 用先序遍历的方法，能保证当遍历到一个节点 X 时，之前遍历的节点 B 一定在路径 OX 中，这里的 O 指的是根节点
      * 注意这里会有很重要的一个操作，就是遍历完自己也遍历完左子树右子树后，把自己去除掉
      * 这个去除的动作至关重要，可以保证这里的操作不影响另一个子树上的操作
+     * (即当我们要遍历5，9这个子树时，要把 Map 中记录的 4，7，8这部分子树的情况都删掉)
      * */
     private int oldTarget = 0;
     private Map<Integer, Integer> prefixMap = new HashMap<>();
@@ -153,13 +154,15 @@ public class Leetcdoe_112_PathSum {
         int result = 0;
         if (root == null) return result;
         currentSum += root.val;
-        int here = prefixMap.getOrDefault(oldTarget - currentSum, 0); // 这个 here 很精髓，指的是在这里结束
+        int here = prefixMap.getOrDefault(currentSum - oldTarget, 0); // 这个 here 很精髓，指的是在这里结束
+        prefixMap.put(currentSum, prefixMap.getOrDefault(currentSum, 0) + 1); // 把自己这里的前缀和 put 进去
         int left = dfs(root.left, currentSum); // 在左树上结束有多少可能的路径
         int right = dfs(root.right, currentSum); // 在右树上结束有多少可能的路径
         result = here + left + right; // 三种情况的可能路径数加一起
         prefixMap.put(currentSum, prefixMap.get(currentSum) - 1); // 去除在自己这里结束的这种情况
         return result;
     }
+    // 体验 dfs 深度优先搜索，体验先序遍历
 }
 
 
