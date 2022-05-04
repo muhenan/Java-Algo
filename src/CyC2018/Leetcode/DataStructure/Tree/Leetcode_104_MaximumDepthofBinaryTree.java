@@ -9,8 +9,6 @@ package CyC2018.Leetcode.DataStructure.Tree;
 public class Leetcode_104_MaximumDepthofBinaryTree {
     public int maxDepth(TreeNode root) {
         if (root == null) return 0; // 这里最好写空树的时候返回0，因为这样可以保证走到最后
-        else {
-            return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-        }
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 }
