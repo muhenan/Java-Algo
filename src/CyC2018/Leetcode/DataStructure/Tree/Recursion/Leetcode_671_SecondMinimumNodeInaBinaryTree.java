@@ -1,4 +1,6 @@
-package CyC2018.Leetcode.DataStructure.Tree;
+package CyC2018.Leetcode.DataStructure.Tree.Recursion;
+
+import CyC2018.Leetcode.DataStructure.Tree.TreeNode;
 
 /** easy 题，这题很简单，放松一下头脑了
  * */

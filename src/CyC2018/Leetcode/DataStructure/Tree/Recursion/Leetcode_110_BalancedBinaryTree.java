@@ -1,4 +1,6 @@
-package CyC2018.Leetcode.DataStructure.Tree;
+package CyC2018.Leetcode.DataStructure.Tree.Recursion;
+
+import CyC2018.Leetcode.DataStructure.Tree.TreeNode;
 
 /**
  * 第一反应：如果配合最大深度的函数来解题的话，如果是分开用两个函数，那么会导致重复查找

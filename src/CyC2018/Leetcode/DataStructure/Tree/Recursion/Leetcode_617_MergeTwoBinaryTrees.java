@@ -1,4 +1,6 @@
-package CyC2018.Leetcode.DataStructure.Tree;
+package CyC2018.Leetcode.DataStructure.Tree.Recursion;
+
+import CyC2018.Leetcode.DataStructure.Tree.TreeNode;
 
 /**
  * 树中的递归：对于左子树的事，将左子树当成新树交给函数，右边亦然，我们只注重当前这个节点的事

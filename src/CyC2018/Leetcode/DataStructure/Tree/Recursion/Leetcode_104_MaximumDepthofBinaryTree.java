@@ -1,4 +1,6 @@
-package CyC2018.Leetcode.DataStructure.Tree;
+package CyC2018.Leetcode.DataStructure.Tree.Recursion;
+
+import CyC2018.Leetcode.DataStructure.Tree.TreeNode;
 
 /**
  * 最经典的一个题目，树的最大深度，或者说树的高度
