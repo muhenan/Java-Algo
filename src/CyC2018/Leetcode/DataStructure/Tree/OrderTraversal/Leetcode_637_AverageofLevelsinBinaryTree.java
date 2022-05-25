@@ -11,6 +11,9 @@ import java.util.*;
  *
  * 通过记录长度的方式，把每一层分开
  *
+ * 使用 BFS 进行层次遍历。在开始遍历一层的节点时，当前队列中的节点数
+ * 就是当前层的节点数，只要控制遍历这么多节点数，就能保证这次遍历的都是当前层的节点。
+ *
  * （为避免特殊情况，不 add null 的节点）
  * */
 public class Leetcode_637_AverageofLevelsinBinaryTree {
