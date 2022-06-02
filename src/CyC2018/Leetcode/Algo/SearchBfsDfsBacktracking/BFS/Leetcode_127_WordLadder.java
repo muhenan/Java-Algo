@@ -39,6 +39,7 @@ public class Leetcode_127_WordLadder {
         }
         return 0;
     }
+
     private void buildGraph (String beginWord, List<String> wordList) {
         List<String> firstLevel = new LinkedList<>();
         for (String s: wordList) {
@@ -56,6 +57,7 @@ public class Leetcode_127_WordLadder {
             graph.put(curr, otherLevel);
         }
     }
+
     private int differentChars (String firstWord, String secondWord) {
         int ans = 0;
         int length = firstWord.length();
