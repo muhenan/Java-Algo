@@ -52,8 +52,6 @@ public class Leetcode_1091_ShortestPathinBinaryMatrix {
             col = c;
         }
     }
-
-
     /**
      * 我体会的 BFS 的模版：
      *
