@@ -48,3 +48,7 @@ public class Leetcode_46_Permutations {
     }
 
 }
+
+/**
+ * 写法已经逐渐 Cyc 化，基本没有区别
+ * */
