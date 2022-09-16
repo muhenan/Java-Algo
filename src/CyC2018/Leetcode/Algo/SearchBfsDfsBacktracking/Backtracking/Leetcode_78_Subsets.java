@@ -6,6 +6,8 @@ import java.util.*;
  *
  * 子集这个题目太易，没有半点难度，每一次 backtracking 时 都 add 一次结果
  *
+ * （注意每次都从一个点作为起点开始 backtrack）
+ *
  * */
 
 public class Leetcode_78_Subsets {
