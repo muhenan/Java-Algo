@@ -3,6 +3,10 @@ package CyC2018.Leetcode.Algo.DynamicProgramming.Fabonacci;
 /**
  * dp[i] = max(dp[i-2] + nums[i], dp[i-1])
  * **/
+
+/**
+ * 可以认为，斐波那契是，dp[i] is just depend on dp[i - 1] and dp[i - 2] 或者更前的
+ * */
 public class Leetcode_198_HouseRobber {
 
 
