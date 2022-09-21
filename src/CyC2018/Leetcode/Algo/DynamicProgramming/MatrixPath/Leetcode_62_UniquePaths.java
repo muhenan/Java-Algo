@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 2 dp 类似 64，用个一维数组就可以
  * */
 public class Leetcode_62_UniquePaths {
-    
+
     public int uniquePaths(int m, int n) {
         int[] dp = new int[n];
         Arrays.fill(dp, 1);
