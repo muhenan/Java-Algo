@@ -9,6 +9,10 @@ package CyC2018.Leetcode.Algo.DynamicProgramming.Fabonacci;
  *
  * iterative or recursive
  *
+ * 如果写成递归，那么更好理解也更好写成，更有 dp 的感觉
+ * 只需要 dp 表，递归，递归式子，即可
+ * but remember, 任何能写成递归的，都可以写成循环，且循环更快
+ *
  * **/
 
 public class Leetocde_70_ClimbingStairs {
