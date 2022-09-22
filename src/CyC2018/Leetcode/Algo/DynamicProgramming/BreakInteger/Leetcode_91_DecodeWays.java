@@ -45,18 +45,18 @@ public class Leetcode_91_DecodeWays {
         }
         int n = s.length();
         int[] dp = new int[n + 1];
-        dp[0] = 1;
+        dp[0] = 1; // 专门就给 two 用的
         dp[1] = s.charAt(0) == '0' ? 0 : 1;
         for (int i = 2; i <= n; i++) {
             int one = Integer.valueOf(s.substring(i - 1, i));
-            if (one != 0) {
+            if (one != 0) { // 只要不能是 0，这个 char 就可以单独用
                 dp[i] += dp[i - 1];
             }
-            if (s.charAt(i - 2) == '0') {
+            if (s.charAt(i - 2) == '0') { // 说明后面两个 char 不能同时用
                 continue;
             }
             int two = Integer.valueOf(s.substring(i - 2, i));
-            if (two <= 26) {
+            if (two <= 26) { // 说明后面两个 char 能同时用 （这里其实是两个判断，上面的通过了才到这个才真正说明后面两个 char 能同时用）
                 dp[i] += dp[i - 2];
             }
         }
