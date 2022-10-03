@@ -17,7 +17,7 @@ public class Leetcode_1521 {
      *
      * 关键是认识到，按位与，值只会越来越小，只会让原有的某些 1 变成 0
      *
-     * 
+     *
      * */
     public int closestToTarget(int[] arr, int target) {
         Set<Integer> my_set = new HashSet<>();
