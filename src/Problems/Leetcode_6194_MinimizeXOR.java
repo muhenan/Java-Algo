@@ -43,8 +43,8 @@ public class Leetcode_6194_MinimizeXOR {
      * 反之，就要尽量让 num1 的低位的 0 变成 1 （最低的 0 变成 1）用先加再或的方法实现这个操作
      * */
     public int minimizeXor2(int num1, int num2) {
-        var c1 = Integer.bitCount(num1);
-        var c2 = Integer.bitCount(num2);
+        int c1 = Integer.bitCount(num1);
+        int c2 = Integer.bitCount(num2);
         for (; c2 < c1; ++c2) num1 &= num1 - 1; // 最低的 1 变成 0
         for (; c2 > c1; --c2) num1 |= num1 + 1; // 最低的 0 变成 1
         return num1;
