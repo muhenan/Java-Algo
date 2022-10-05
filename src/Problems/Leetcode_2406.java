@@ -39,6 +39,17 @@ public class Leetcode_2406 {
         return my_list.size();
     }
 
+
+    public int minGroups2(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+        var pq = new PriorityQueue<Integer>();
+        for (var p : intervals) {
+            if (!pq.isEmpty() && pq.peek() < p[0]) pq.poll();
+            pq.offer(p[1]);
+        }
+        return pq.size();
+    }
+
     int[][] temp = { { 2,9 }, { 5, 7 }};
     public static void main(String[] args) {
         Leetcode_2406 solu = new Leetcode_2406();
