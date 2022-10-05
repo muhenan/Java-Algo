@@ -39,8 +39,8 @@ public class Leetcode_2406 {
 
     public int minGroups2(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
-        var pq = new PriorityQueue<Integer>();
-        for (var p : intervals) {
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+        for (int[] p : intervals) {
             if (!pq.isEmpty() && pq.peek() < p[0]) pq.poll();
             pq.offer(p[1]);
         }
