@@ -91,4 +91,24 @@ public class BinarySearch {
         }
         return high;
     }
+
+
+    /**
+     * 变种
+     * 找比 key 大的第一个数
+     * 如果找不到，就返回 length，即指针指到外面去了
+     * */
+    public int binarySearchMaxLow(int[] nums, int key) {
+        int low = 0;
+        int high = nums.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (nums[mid] <= key) { // 小于等于了，这个时候 mid 肯定肯定是不对的 low = mid + 1，low 有可能是对的
+                low = mid + 1;
+            } else { // 这个时候，就是 mid 大于 key 了， low 和 high 都可能是对的，这个时候时候我们变 high，保持 left 一直是对的
+                high = mid - 1; // 变 high 是为了最后导致 low > high
+            }
+        }
+        return low; // 最后的 high 肯定是错的，我们只要保证最后有一个 low 是对的就好
+    }
 }
