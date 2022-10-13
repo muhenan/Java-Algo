@@ -45,17 +45,21 @@ public class JavaDSandF {
         System.out.println();
 
 
+        System.out.println("Thins about PQ");
+
+
 //        PriorityQueue<Integer> pq = new PriorityQueue<>(2, new Comparator<Integer>() {
 //            @Override
 //            public int compare(Integer o1, Integer o2) {
 //                return o2 - o1;
 //            }
 //        });
-//        pq.offer(4);
-//        pq.offer(1);
-//        pq.offer(2);
-//        pq.offer(0);
-//        System.out.println();
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.offer(4);
+        pq.offer(1);
+        pq.offer(2);
+        pq.offer(0);
+        System.out.println();
 
 //        pq.remove(2);
 //        pq.offer(3);
