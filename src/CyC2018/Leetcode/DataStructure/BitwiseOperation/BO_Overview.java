@@ -14,5 +14,24 @@ package CyC2018.Leetcode.DataStructure.BitwiseOperation;
  *
  * */
 
+
+/**
+ * a + b 相当于
+ *
+ * (a^b) + (a&b)*2 ：可以认为是不进位加进位
+ * (a^b) 就是把不进位的，原位置的数拿到了
+ * (a&b)*2 是拿到进位，并向左已一下，即找到了所有的进位
+ *
+ * (a&b) +(a|b) ：相当于在原地的进位，加上在原地的进位和不进位
+ * (a&b) 把进位保存下来，在原地
+ * (a|b) 把进位和不进位都保存下来，在原地
+ * 加的时候该进位的自然会向左进位了
+ *
+ * */
 public class BO_Overview {
+
+    public static void main(String[] args) {
+        int a = 11;
+        System.out.println(Integer.toBinaryString(a));
+    }
 }
