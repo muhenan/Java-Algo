@@ -26,7 +26,7 @@ public class Leetcode_39_CombinationSum {
         } else {
             for ( int i = start; i < lengthOfNum; i++) {
                 tempOne.add(nums[i]);
-                bt(nums, rest - nums[i], i);
+                bt(nums, rest - nums[i], i); // 这里带的还是原来这个数，就说明选了这个数了，还可以再选这个数
                 tempOne.remove(tempOne.size() - 1);
             }
         }
