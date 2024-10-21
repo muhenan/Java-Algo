@@ -1,4 +1,4 @@
-package JavaUtility;
+package JavaUtility.datastructure;
 
 import java.util.*;
 

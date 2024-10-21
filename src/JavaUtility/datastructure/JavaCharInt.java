@@ -1,4 +1,4 @@
-package JavaUtility;
+package JavaUtility.datastructure;
 
 public class JavaCharInt {
     public static void main(String[] args) {
