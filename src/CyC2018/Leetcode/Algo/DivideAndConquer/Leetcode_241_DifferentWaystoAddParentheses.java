@@ -34,7 +34,7 @@ public class Leetcode_241_DifferentWaystoAddParentheses {
                 }
             }
         }
-        if (ways.size() == 0) ways.add(Integer.valueOf(expression));
+        if (ways.isEmpty()) ways.add(Integer.valueOf(expression));
         return ways;
     }
 }
