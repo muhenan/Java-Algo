@@ -1,6 +1,10 @@
 # Compiled class file
 *.class
 
+# This will ignore .DS_Store everywhere
+.DS_Store
+**/.DS_Store
+
 # Log file
 *.log
 
